@@ -14,6 +14,7 @@ class ArticlesTable extends Table {
     public function initialize(array $config): void{
         // fonctions qui sont appellées lors de crétion d'un article
         $this->addBehavior('Timestamp');
+        $this->belongsToMany('Tags');
     }
 
     public function beforeSave(EventInterface $event, $entity, $options){
